@@ -1,0 +1,15 @@
+
+
+{
+  "extends": "stylelint-config-recommended-scss",
+  "plugins": ["stylelint-itcss"],
+  "rules": {
+
+            "itcss/no-at-important":true,
+            "itcss/no-variable-declaration": true,
+            "unit-allowed-list": ["em", "rem", "%", "px"]
+
+  },
+  "ignoreFiles": ["src/assets/styles/_settings.scss","src/assets/styles/_trumps.scss" ]
+}
+
