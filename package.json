@@ -46,9 +46,11 @@
     "sharp": "^0.29.1",
     "stylelint": "^14.1.0",
     "stylelint-config-recommended-scss": "^5.0.2",
+    "stylelint-itcss": "^0.4.0",
     "stylelint-scss": "^4.0.0"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.15.4"
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^5.1.3"
   }
 }

@@ -3,80 +3,81 @@
 *
 *  CONTENTS
 *
+*  1.DEPENDENCY IMPORTS
 *
-*  1.SETTINGS.............Global and brand variables
+*  2.SETTINGS.............Global and brand variables
 *                         For example: variables. Font, colors,
 *                         definitions, etc. No output.
 *
-*  2.TOOLS.................Mixins and functions
+*  3.TOOLS.................Mixins and functions
 *                         For example: mixins and functions. No output
 *
-*  3.GENERIC..............Ground Zero styles like Normalize.css,
+*  4.GENERIC..............Ground Zero styles like Normalize.css,
 *                         global box-sizing rules
 *
-*  4.ELEMENTS.............Unclassed HTML elements (type selectors)
+*  5.ELEMENTS.............Unclassed HTML elements (type selectors)
 *                         For example: bare HTML elements
 *                         (H1–H6 styles)
 *
-*  5.OBJECTS..............Cosmetic-free design patterns
+*  6.OBJECTS..............Cosmetic-free design patterns
 *                         class selectors which define undecorated
 *                         design patterns, like the media object
 *                         from OOCSS.
 *
-*  6.COMPONENTS...........Designed components, chunks of UI
+*  7.COMPONENTS...........Designed components, chunks of UI
 *                         For example: specific UI components.
 *                         Most of the code goes here. Wrapping and
 *                         constraining elements.
 *
-*  7.TRUMPS / UTILITIES...The only place where !important declarations
+*  8.TRUMPS / UTILITIES...The only place where !important declarations
 *                         will be accepted.The most explicit
 *                         types of rules.
 *
-*  8.DEPENDENCY IMPORTS
+*
 *
 *
 **/
 
 /*------------------------------------*\
-  1. Settings
+  1. Dependencies
+\*------------------------------------*/
+@import "bootstrap/scss/bootstrap.scss";
+@import "../../../node_modules/@fortawesome/fontawesome-free/css/all.css";
+
+/*------------------------------------*\
+  2. Settings
 \*------------------------------------*/
 @import "settings";
 
 /*------------------------------------*\
-  2. Tools
+  3. Tools
 \*------------------------------------*/
 @import "tools";
 
 /*------------------------------------*\
-  3. Generic
+  4. Generic
 \*------------------------------------*/
 @import "generic";
 
 /*------------------------------------*\
-  4. Elements
+  5. Elements
 \*------------------------------------*/
 @import "elements";
 
 /*------------------------------------*\
-  5. Objects
+  6. Objects
 \*------------------------------------*/
 @import "objects";
 
 /*------------------------------------*\
-  6. Components
+  7. Components
 \*------------------------------------*/
 @import "components";
 
 /*------------------------------------*\
-  7. Trumps / Utilities
+  8. Trumps / Utilities
 \*------------------------------------*/
 @import "trumps";
-
-/*------------------------------------*\
-  8. Dependencies
-\*------------------------------------*/
-
-@import "../../../node_modules/@fortawesome/fontawesome-free/css/all.css";
 
 /*
 original:

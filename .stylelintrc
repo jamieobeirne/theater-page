@@ -7,7 +7,7 @@
 
             "itcss/no-at-important":true,
             "itcss/no-variable-declaration": true,
-            "unit-allowed-list": ["em", "rem", "%", "px"]
+            "unit-allowed-list": ["em", "rem", "%", "px", "fr"]
 
   },
   "ignoreFiles": ["src/assets/styles/_settings.scss","src/assets/styles/_trumps.scss" ]

@@ -9,6 +9,8 @@
   3. Global Theater Icon
   4. Homepage
   5. Actors-characters Page
+  6. Article
+  7. Last
 
 
 \*------------------------------------*/
@@ -23,7 +25,8 @@
   margin: 0;
   padding-left: 50px;
   padding-right: 50px;
-  padding-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 @media only screen and (max-width: $tabletMaxWidth) {
   .header-global-wrapper {
@@ -41,7 +44,6 @@
   flex-grow: 1;
 }
 @media only screen and (max-width: $tabletMaxWidth) {
-  .header-desktop-spacer,
   .header-desktop-right {
     display: none;
   }
@@ -81,6 +83,11 @@
   display: none;
 }
 
+.hamburger-container,
+.small_sreen_header_navigation {
+  display: none;
+}
+
 @media only screen and (max-width: $tabletMaxWidth) {
   .small-city {
     display: block;
@@ -89,11 +96,109 @@
   .regular-city {
     display: none;
   }
+
+  .hamburger-container {
+    display: inline;
+  }
+
+  .small_sreen_header_navigation {
+    list-style: none;
+    position: absolute;
+    top: 120px;
+    left: 0;
+    background: white;
+    line-height: 35px;
+    font-size: 22px;
+    width: 100%;
+    padding-left: 20px;
+    padding-bottom: 35px;
+    padding-top: 25px;
+    z-index: 9999;
+    border-top: 1px gray solid;
+  }
+
+  .small_sreen_header_navigation p {
+    color: gray;
+    margin-bottom: 17px;
+  }
+  .small_sreen_header_navigation ul {
+    list-style-type: none;
+  }
 }
 
 /*------------------------------------*\
   2. Footer
 \*------------------------------------*/
+
+.footer-global-container {
+  width: auto;
+  height: 220px;
+  margin: 0;
+  padding-bottom: 30px;
+  padding-top: 40px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 70px;
+}
+
+@media only screen and (max-width: $tabletMaxWidth) {
+  .footer-global-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.footer-content-1,
+.footer-content-2,
+.footer-content-3 {
+  width: 30%;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-top: 25px;
+  padding-left: 45px;
+  border-right: 1px solid gray;
+}
+@media only screen and (max-width: $tabletMaxWidth) {
+  .footer-content-1,
+  .footer-content-2,
+  .footer-content-3 {
+    width: 70%;
+    border-right: none;
+    padding: 0;
+    margin: 0;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 1px solid gray;
+    margin-left: 2em;
+    margin-right: 2em;
+    margin-top: 50px;
+    padding-top: 60px;
+  }
+
+  .footer-content-1 {
+    border-top: none;
+    padding-top: 0;
+  }
+}
+
+.footer-content-3 {
+  border-right: none;
+}
+
+.footer-content-1 h6,
+.footer-content-2 h6,
+.footer-content-3 h6 {
+  color: gray;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
 
 /*------------------------------------*\
   3. Global Theater Icon
@@ -120,6 +225,10 @@
   margin-right: 35px;
 }
 
+.theater-logo-object h6 {
+  margin-top: 15px;
+}
+
 .theater-details {
   display: flex;
   flex-direction: column;
@@ -129,7 +238,6 @@
 .theater-details h6 {
   margin: 0;
   padding: 0;
-  margin-top: 3px;
 }
 
 @media only screen and (max-width: $tabletMaxWidth) {
@@ -166,24 +274,50 @@ main {
   padding-bottom: 100px;
 }
 
+/*flex column for screens that don't support grid:*/
 .homepage-main-wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  padding: 0;
+  margin: 0;
   padding-top: 70px;
-  margin-left: 20px;
-  margin-right: 20px;
-  display: grid;
-  grid-template-columns: 12em 4em 12em 11em 6em 6em 8em;
-  grid-template-rows: 2em 5em 0.5em 4em 21em 4em 4em 2em 5em;
-  grid-template-areas:
-    ". a a . . . ."
-    ". . . . . . ."
-    ". b . . . . ."
-    ". . . . c . ."
-    ". . . . . . ."
-    ". . . d d d d"
-    ". . . . . . ."
-    ". . . . . . ."
-    ". e f f f f .";
+  padding-left: 25px;
+  padding-right: 25px;
 }
+/*************************************************/
+
+/*Grid for large screens *************************/
+@media only screen and (min-width: 1001px) {
+  .homepage-main-wrapper {
+    padding-top: 20px;
+    display: grid;
+    /*
+    grid-template-columns: 12em 4em 12em 11em 6em 6em 8em !important;
+    grid-template-rows: 2em 5em 0.5em 4em 21em 4em 4em 2em 5em !important;
+    grid-template-areas:
+      ". a a . . . ."
+      ". . . . . . ."
+      ". b . . . . ."
+      ". . . . c . ."
+      ". . . . . . ."
+      ". . . d d d d"
+      ". . . . . . ."
+      ". . . . . . ."
+      ". e f f f f .";
+      */
+    grid-template-columns: 0.5fr auto repeat(2, 1fr) 0.5fr;
+    grid-template-rows: 1.7fr 280px repeat(2, 1fr);
+    grid-template-areas:
+      ". a a . ."
+      ". b c c ."
+      ". . d d d"
+      ". e f f .";
+  }
+}
+
+/************************************/
 
 .presentation-message {
   grid-area: a;
@@ -201,6 +335,7 @@ main {
 
 .homepage-summary-grid {
   grid-area: c;
+  padding-left: 30px;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -222,6 +357,7 @@ main {
 
 .theater-logo-grid {
   grid-area: e;
+  padding-left: 100px;
 }
 
 .theater-logo-homepage {
@@ -262,21 +398,6 @@ main {
 .starring-written-grid h6 {
   padding: 2px 0;
   margin: 0;
-}
-
-/*flex column for small screens*/
-@media only screen and (max-width: 1000px) {
-  .homepage-main-wrapper {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    padding-top: 70px;
-    padding-left: 25px;
-    padding-right: 25px;
-  }
 }
 
 /* circular image */
@@ -384,4 +505,89 @@ main {
 
 .actors-characters-card img {
   width: 100%;
+}
+
+.article-title-author h1,
+.article-title-author h2 {
+  color: $base-color;
+}
+
+.article-title-author {
+  margin-bottom: 25px;
+}
+
+.article-main-container {
+  margin-top: 70px;
+  margin-left: 90p;
+  margin-left: 90px;
+  margin-right: 70px;
+}
+
+/*------------------------------------*\
+  6. Article, Page 3
+\*------------------------------------*/
+
+.article-body {
+  height: 100%;
+}
+
+/* hero image */
+.article-hero-image {
+  background-image: url("../images/article-author.webp");
+  /* Set a specific height */
+  height: 50%;
+
+  /* Position and center the image to
+  scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.article-text {
+  color: gray;
+}
+
+/*------------------------------------*\
+  7. Last, Page 4
+\*------------------------------------*/
+
+.last-form-global-container {
+  padding-top: 170px;
+  padding-bottom: 100px;
+  padding-left: 140px;
+  padding-right: 140px;
+}
+
+@media only screen and (max-width: $tabletMaxWidth) {
+  .last-form-global-container {
+    padding-left: 110px;
+    padding-right: 110px;
+  }
+}
+
+@media only screen and (max-width: $phoneMaxWidth) {
+  .last-form-global-container {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+.last-form-global-container label {
+  color: white;
+}
+
+.last-form-global-container input {
+  color: gray;
+}
+
+.last-form-global-container button {
+  background-color: $second-color;
+  color: white;
+  border: none;
+}
+
+.last-form-global-container button:hover {
+  background-color: $base-color;
 }
