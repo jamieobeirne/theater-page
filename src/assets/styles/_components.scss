@@ -159,7 +159,7 @@
   margin-top: 20px;
   margin-left: 5px;
   margin-right: 5px;
-  padding-top: 25px;
+  padding-top: 15px;
   padding-left: 45px;
   border-right: 1px solid gray;
 }
@@ -507,6 +507,9 @@ main {
   width: 100%;
 }
 
+/*------------------------------------*\
+  6. Article, Page 3
+\*------------------------------------*/
 .article-title-author h1,
 .article-title-author h2 {
   color: $base-color;
@@ -523,9 +526,23 @@ main {
   margin-right: 70px;
 }
 
-/*------------------------------------*\
-  6. Article, Page 3
-\*------------------------------------*/
+@media only screen and (max-width: $tabletMaxWidth) {
+  .article-main-container {
+    margin-top: 40px;
+    margin-left: 40p;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+}
+
+@media only screen and (max-width: $phoneMaxWidth) {
+  .article-main-container {
+    margin-top: 20px;
+    margin-left: 20p;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}
 
 .article-body {
   height: 100%;
@@ -545,8 +562,126 @@ main {
   position: relative;
 }
 
+.article-upper-container {
+  margin-bottom: 70px;
+}
+
 .article-text {
   color: gray;
+  margin-bottom: 20px;
+}
+
+.article-lower-container {
+  display: flex;
+}
+
+.article-lower-image img {
+  width: 90%;
+  height: auto;
+}
+
+@media only screen and (max-width: 1000px) {
+  .article-lower-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .article-lower-image img {
+    width: 100%;
+  }
+}
+
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  direction: ltr;
+  box-sizing: border-box;
+}
+
+.ArticleCopy {
+  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.ArticleCopy blockquote {
+  border-radius: 3px;
+  position: relative; /*  <--- */
+  font-style: italic;
+  text-align: center;
+  padding: 1rem 1.2rem;
+  width: 80%; /* create space for the quotes */
+  color: gray;
+  margin: 1rem auto 2rem;
+  color: gray;
+  background: white;
+  font-size: 1.7em;
+}
+
+@media only screen and (max-width: $tabletMaxWidth) {
+  .ArticleCopy {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 2em;
+  }
+
+  .ArticleCopy blockquote {
+    padding: 0;
+    margin: 0;
+    margin-top: 2em;
+  }
+}
+
+.ArticleCopy p {
+  text-rendering: optimizeLegibility;
+  color: gray;
+}
+
+@media only screen and (max-width: $tabletMaxWidth) {
+  .ArticleCopy blockquote {
+    font-size: 1em;
+  }
+}
+
+/* -- create the quotation marks -- */
+.ArticleCopy blockquote:before,
+.ArticleCopy blockquote:after {
+  font-family: FontAwesome;
+  position: absolute;
+  /* -- inside the relative position of blockquote -- */
+  top: 13px;
+  color: gray;
+  font-size: 34px;
+}
+
+@media only screen and (max-width: $phoneMaxWidth) {
+  .ArticleCopy blockquote:before,
+  .ArticleCopy blockquote:after {
+    font-family: FontAwesome;
+    position: absolute;
+    /* -- inside the relative position of blockquote -- */
+    top: 13px;
+    color: gray;
+    font-size: 20px;
+  }
+}
+
+.ArticleCopy blockquote:before {
+  content: "\f10d";
+  margin-right: 13px;
+  right: 100%;
+}
+.ArticleCopy blockquote:after {
+  content: "\f10e";
+  margin-left: 13px;
+  left: 100%;
+  top: auto;
+  bottom: 13px;
 }
 
 /*------------------------------------*\
