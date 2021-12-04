@@ -648,22 +648,26 @@ main {
 }
 
 /* -- create the quotation marks -- */
-.ArticleCopy blockquote:before,
+/*.ArticleCopy blockquote:before,
 .ArticleCopy blockquote:after {
-  /*font-family: FontAwesome;*/
-  font-family: $font-family-serif;
+  font-family: FontAwesome;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f10d";
   position: absolute;
-  /* -- inside the relative position of blockquote -- */
+
   top: 13px;
   color: gray;
   font-size: 34px;
-}
+}*/
 
 @media only screen and (max-width: $phoneMaxWidth) {
   .ArticleCopy blockquote:before,
   .ArticleCopy blockquote:after {
     /*font-family: FontAwesome;*/
-    font-family: $font-family-serif;
+    /*font-family: "Font Awesome 5 Free";
+    font-weight: 900;*/
+    content: "\f10d";
     position: absolute;
     /* -- inside the relative position of blockquote -- */
     top: 13px;
