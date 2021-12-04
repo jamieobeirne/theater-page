@@ -521,25 +521,25 @@ main {
 
 .article-main-container {
   margin-top: 70px;
-  margin-left: 90p;
   margin-left: 90px;
-  margin-right: 70px;
+  margin-right: 90px;
+  margin-bottom: 70px;
 }
 
 @media only screen and (max-width: $tabletMaxWidth) {
   .article-main-container {
     margin-top: 40px;
-    margin-left: 40p;
     margin-left: 40px;
     margin-right: 40px;
+    margin-bottom: 40px;
   }
 }
 
 @media only screen and (max-width: $phoneMaxWidth) {
   .article-main-container {
     margin-top: 20px;
-    margin-left: 20p;
     margin-left: 20px;
+    margin-bottom: 20px;
     margin-right: 20px;
   }
 }
@@ -601,7 +601,7 @@ main {
 }
 
 .ArticleCopy {
-  font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", "Helvetica", Arial, sans-serif;
   width: 80%;
   margin: 0 auto;
   padding: 3rem;
@@ -618,7 +618,6 @@ main {
   width: 80%; /* create space for the quotes */
   color: gray;
   margin: 1rem auto 2rem;
-  color: gray;
   background: white;
   font-size: 1.7em;
 }
@@ -651,7 +650,8 @@ main {
 /* -- create the quotation marks -- */
 .ArticleCopy blockquote:before,
 .ArticleCopy blockquote:after {
-  font-family: FontAwesome;
+  /*font-family: FontAwesome;*/
+  font-family: $font-family-serif;
   position: absolute;
   /* -- inside the relative position of blockquote -- */
   top: 13px;
@@ -662,7 +662,8 @@ main {
 @media only screen and (max-width: $phoneMaxWidth) {
   .ArticleCopy blockquote:before,
   .ArticleCopy blockquote:after {
-    font-family: FontAwesome;
+    /*font-family: FontAwesome;*/
+    font-family: $font-family-serif;
     position: absolute;
     /* -- inside the relative position of blockquote -- */
     top: 13px;
